@@ -1,4 +1,5 @@
 export interface Auto {
+  id: string;
   model: string;
   brand: string;
   year: number;

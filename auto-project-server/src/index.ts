@@ -2,10 +2,13 @@ import * as dotenv from 'dotenv'
 import express from 'express';
 import mongodb from 'mongodb';
 import { Auto } from './interface/Auto.interface';
+import mongoose from "mongoose";
+import { autoSchema } from './schemas/Auto.schema';
+
 
 dotenv.config();
 const app = express();
-
+const Auto = mongoose.model('Auto', autoSchema);
 const url = process.env.SERVER_URL;
 const dbName = process.env.DATABASE_NAME;
 const port = process.env.PORT;
@@ -34,7 +37,7 @@ mongodb.MongoClient.connect(url as string, options, (err, client) => {
 app.use(express.json());
 
 app.post('/autos', (req, res) => {
-  const newAuto: Auto = req.body;
+  const newAuto = new Auto(req.body);
   db.collection('autos').insertOne(newAuto, (err: any, result: any) => {
     if (err) {
       console.error(err);
