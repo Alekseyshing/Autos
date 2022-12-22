@@ -68,9 +68,9 @@ node dist/app.js [action] [arguments]
 The following actions are available:
 
 get: Get a list of autos
----
+***
 add: Add a new auto
----
+***
 delete: Delete an auto
 
 #### Examples:
