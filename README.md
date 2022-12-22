@@ -72,17 +72,17 @@ add: Add a new auto
 delete: Delete an auto
 
 #### Examples:
-# Get a list of autos
+##### Get a list of autos
 ```
 node dist/app.js get
 ```
 
-# Add a new auto
+##### Add a new auto
 ```
 node dist/app.js add 123 Civic Honda 2020 350000 Japan
 ```
 
-# Delete an auto
+##### Delete an auto
 ```
 node dist/app.js delete 123
 ```
